@@ -46,8 +46,8 @@
 
 - [Регистрация в "Yandex-ID"](https://yandex.ru/support/id/authorization/registration.html)
 - [Вход в web-консоль "Yandex Cloud"](https://cloud.yandex.ru/docs/overview/quickstart)
-- [Установка утилиты `yc`](https://cloud.yandex.ru/docs/cli/operations/install-cli)
-- [Аутентификация с помощью `yc` в "Yandex Cloud"](https://cloud.yandex.ru/docs/cli/operations/authentication/user)
+- [Установка утилиты yc](https://cloud.yandex.ru/docs/cli/operations/install-cli)
+- [Аутентификация с помощью yc в "Yandex Cloud"](https://cloud.yandex.ru/docs/cli/operations/authentication/user)
 - [Установка утилиты "terraform"](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart)
 
 #### Создание проекта в "Yandex Cloud" и выделенного сервисного пользователя
