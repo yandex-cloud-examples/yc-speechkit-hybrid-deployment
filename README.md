@@ -24,7 +24,7 @@
 - [Kubernetes](https://kubernetes.io/). 
 - [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift).
 
-Для запуска контейнеров `SK-Hybrid` требуются [определенные графические карты c GPU](https://cloud.yandex.ru/docs/speechkit-hybrid/system-requirements#hardware)
+Для запуска контейнеров `SK-Hybrid` требуются [определенные графические карты c GPU](https://cloud.yandex.ru/docs/speechkit-hybrid/system-requirements#hardware).
 
 Производитель графических карт, компания [NVIDIA](www.nvidia.com) требует для работы своих драйверов и системного ПО [определенных версий ОС](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/supported-platforms.html). Технически возможно настроить драйвера и системное ПО для GPU для работы в операционных системах, не входящих в список поддерживаемых производителем, но в этом случае это будет неподдерживаемая произодителем схема, в которой работоспособность всех компонентов не гарантируется.
 
