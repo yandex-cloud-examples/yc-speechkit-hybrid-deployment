@@ -1,0 +1,5 @@
+# (don't use symbols "$" and "%" in passwords!)
+
+CR_ENDPOINT = "cr.yandex"
+CR_REGISTRY_ID = ""
+BILLING_STATIC_API_KEY = ""
