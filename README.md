@@ -19,10 +19,10 @@
 ## Среда исполнения <a id="runtime"/></a>
 
 Решение `SK-Hybrid` должно запускаться в [среде контейнеризации Docker Engine](https://cloud.yandex.ru/docs/speechkit-hybrid/system-requirements). Сегодня в мире есть несколько реализаций `Docker Engine` и наиболее известные из них следующие:
-- [Docker](https://www.docker.com/).
-- [Podman](https://podman.io/).
-- [Kubernetes](https://kubernetes.io/). 
-- [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift).
+- [Docker](https://www.docker.com/)
+- [Podman](https://podman.io/)
+- [Kubernetes](https://kubernetes.io/)
+- [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift)
 
 Для запуска контейнеров `SK-Hybrid` требуются [определенные графические карты c GPU](https://cloud.yandex.ru/docs/speechkit-hybrid/system-requirements#hardware).
 
