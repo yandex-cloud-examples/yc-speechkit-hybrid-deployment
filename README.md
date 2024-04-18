@@ -1,8 +1,8 @@
-# Начало работы с Yandex SpeechKit Hybrid
+# Развертывание демостенда Yandex SpeechKit Hybrid с помощью Terraform 
 
 [SpeechKit Hybrid](https://cloud.yandex.ru/ru/docs/speechkit-hybrid/) — это технологии [Yandex SpeechKit](https://cloud.yandex.ru/ru/docs/speechkit/) для распознавания и синтеза речи, которые работают внутри вашей инфраструктуры. В основе SpeechKit Hybrid лежат контейнеры Docker, они подходят для выполнения требований к безопасности и управлению данными.
 
-Чтобы начать работу со SpeechKit Hybrid, разверните и протестируйте приложения распознавания и синтеза речи в Docker-контейнерах. Для этого создайте инфраструктуру Yandex Cloud с помощью Terraform. Инструкция приведена в [документации SpeechKit Hybrid](https://cloud.yandex.ru/ru/docs/speechkit-hybrid/quickstart).
+Чтобы познакомиться со SpeechKit Hybrid, разверните и протестируйте приложения распознавания и синтеза речи в Docker-контейнерах. Для этого создайте инфраструктуру Yandex Cloud с помощью Terraform. Инструкция приведена в [документации SpeechKit Hybrid](https://cloud.yandex.ru/ru/docs/speechkit-hybrid/quickstart).
 
 В репозитории расположены следующие конфигурационные Terraform-файлы для создания инфраструктуры:
 
