@@ -62,7 +62,7 @@ resource "yandex_compute_instance" "this" {
 # DEPLOYING VARS
 ####
 
-variable "COMPOSE_V100_STT_TTS" {
+variable "COMPOSE_A100_STT_TTS" {
   type = string
   default =  <<EOF
 version: '3'
@@ -186,7 +186,7 @@ resource "null_resource" "this" {
   }
 
   provisioner "file" {
-    content = "${var.COMPOSE_V100_STT_TTS}"
+    content = "${var.COMPOSE_A100_STT_TTS}"
     destination = "/home/${var.USER_NAME}/docker-compose.yml"
   }
 
@@ -231,7 +231,7 @@ resource "null_resource" "this" {
   }
 
   triggers = {
-    compose_changed = md5(var.COMPOSE_V100_STT_TTS)
+    compose_changed = md5(var.COMPOSE_A100_STT_TTS)
     node_id_changed = yandex_compute_instance.this.id
   }
 
