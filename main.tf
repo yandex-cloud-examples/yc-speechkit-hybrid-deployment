@@ -61,6 +61,6 @@ resource "tls_private_key" "ssh_auto_id_rsa" {
 # OUTPUTS
 ####
 
-output "yc-gpu-v100-docker-stt-tts-ext" {
+output "yc-gpu-a100-docker-stt-tts-ext" {
   value = "${yandex_compute_instance.this.network_interface.*.nat_ip_address}"
 }

@@ -8,11 +8,11 @@ resource "yandex_compute_instance" "this" {
   zone = "ru-central1-a"
   folder_id = local.FOLDER_ID
 
-  # (Intel Cascade Lake with GPU Nvidia Tesla V100)
-  platform_id = "gpu-standard-v2"
+  # (AMD Epyc with Nvidia Ampere A100)
+  platform_id = "gpu-standard-v3"
   resources {
-    cores = 16
-    memory = 96
+    cores = 56
+    memory = 238
     core_fraction = 100
     gpus = 2
   }
@@ -62,7 +62,7 @@ resource "yandex_compute_instance" "this" {
 # DEPLOYING VARS
 ####
 
-variable "COMPOSE_V100_STT_TTS" {
+variable "COMPOSE_A100_STT_TTS" {
   type = string
   default =  <<EOF
 version: '3'
@@ -100,11 +100,11 @@ services:
       - ./swaydb:/var/swaydb:z
     restart: always
 
-  stt-server-gpu-v100:
-    container_name: stt-server-gpu-v100
+  stt-server-gpu-a100:
+    container_name: stt-server-gpu-a100
     network_mode: host
     privileged: true
-    image: $CR_ENDPOINT/$CR_REGISTRY_ID/release/stt/v100/stt_server:$SKH_VER
+    image: $CR_ENDPOINT/$CR_REGISTRY_ID/release/stt/a100/stt_server:$SKH_VER
     environment:
       - TZ=UTC
       - LICENSE_SERVICE_ENDPOINTS=0.0.0.0:8087
@@ -130,11 +130,11 @@ services:
               capabilities: [gpu]
     restart: always
 
-  tts-server-gpu-v100:
-    container_name: tts-server-gpu-v100
+  tts-server-gpu-a100:
+    container_name: tts-server-gpu-a100
     network_mode: host
     privileged: true
-    image: $CR_ENDPOINT/$CR_REGISTRY_ID/release/tts/v100/tts_server:$SKH_VER
+    image: $CR_ENDPOINT/$CR_REGISTRY_ID/release/tts/a100/tts_server:$SKH_VER
     environment:
       - TZ=UTC
       - LICENSE_SERVICE_ENDPOINTS=0.0.0.0:9087
@@ -186,7 +186,7 @@ resource "null_resource" "this" {
   }
 
   provisioner "file" {
-    content = "${var.COMPOSE_V100_STT_TTS}"
+    content = "${var.COMPOSE_A100_STT_TTS}"
     destination = "/home/${var.USER_NAME}/docker-compose.yml"
   }
 
@@ -231,7 +231,7 @@ resource "null_resource" "this" {
   }
 
   triggers = {
-    compose_changed = md5(var.COMPOSE_V100_STT_TTS)
+    compose_changed = md5(var.COMPOSE_A100_STT_TTS)
     node_id_changed = yandex_compute_instance.this.id
   }
 
